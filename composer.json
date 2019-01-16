@@ -1,0 +1,30 @@
+{
+    "name": "sana/yii2-image-by-url",
+    "description": "Расширение для загрузки картинки по URL (jpg, png, gif). ",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","image","URL"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sana",
+            "email": "sana.stashkevich@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "sana\\image\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "sana\\image\\tests\\": "tests/"
+        }
+    }
+}
