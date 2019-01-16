@@ -26,3 +26,21 @@ Usage
 -----
 
 Once the extension is installed, simply use it in your code by  :
+```
+<?php
+
+namespace app\commands;
+
+use yii\console\Controller;
+use sana\image\Loader;
+
+class LoadController extends Controller
+{
+
+    public function actionLoad($from, $to)
+    {
+        $loader = new  Loader();
+        $loader->load($from,$to);
+    }
+}
+```
