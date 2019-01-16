@@ -1,5 +1,11 @@
 {
     "name": "sana/yii2-image-by-url",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/SanaStashkevich/image"
+        }
+    ],
     "description": "Расширение для загрузки картинки по URL (jpg, png, gif). ",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","image","URL"],
@@ -10,8 +16,7 @@
             "email": "sana.stashkevich@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
+    "minimum-stability": "stable",
     "require": {
         "yiisoft/yii2": "~2.0"
     },
