@@ -48,6 +48,7 @@ class Validator implements ValidateMimeInterface, ValidatePathInterface, Validat
      */
     public function validateUrl(string $url): bool
     {
-        return filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_HOST_REQUIRED);
+        $headers = @get_headers($url);
+        return (strpos( $headers[0], '200') != false)  && filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_HOST_REQUIRED);
     }
 }

@@ -45,6 +45,7 @@ class LoaderBase implements LoadInterface
         if (!$this->validatorHandler->validateMime($from)) {
             throw new Exception('Not valid Mime file');
         }
+
         $filename = basename($from);
         $savePath = $to .'/'. $filename;
 
@@ -53,9 +54,13 @@ class LoaderBase implements LoadInterface
         $fp = fopen($savePath, 'wb');
 
         curl_setopt($ch, CURLOPT_FILE, $fp);
-        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 50);
         curl_exec($ch);
+        $errno = curl_errno($ch);
         curl_close($ch);
         fclose($fp);
+        if($errno){
+            throw new Exception('Failed to download file. Error: '.curl_strerror($errno));
+        }
     }
 }

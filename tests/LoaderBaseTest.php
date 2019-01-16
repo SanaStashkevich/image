@@ -12,9 +12,9 @@ use yii\base\Exception;
  * Class LoaderTest
  * @package sana\image\tests
  */
-class LoaderTest extends TestCase
+class LoaderBaseTest extends TestCase
 {
-    const  FROM = 'https://resheto.net/images/mater/0-rompic/romantic_pic_37.jpeg.pagespeed.ce.aMUWZo55th.png';
+    const   FROM = 'https://resheto.net/images/mater/0-rompic/romantic_pic_37.jpeg.pagespeed.ce.aMUWZo55th.png';
     private $validatorMock;
     private $loader;
 
@@ -97,17 +97,14 @@ class LoaderTest extends TestCase
     {
         $this->validatorMock->expects($this->once())
             ->method('validateUrl')
-            ->with(self::FROM)
             ->will($this->returnValue(true));
 
         $this->validatorMock->expects($this->once())
             ->method('validatePath')
-            ->with(getcwd())
             ->will($this->returnValue(true));
 
         $this->validatorMock->expects($this->once())
             ->method('validateMime')
-            ->with(self::FROM)
             ->will($this->returnValue(true));
 
         $this->loader->load(self::FROM, getcwd());
