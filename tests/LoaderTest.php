@@ -4,7 +4,7 @@ namespace sana\image\tests;
 
 
 use \PHPUnit\Framework\TestCase;
-use sana\image\Loader;
+use sana\image\LoaderBase;
 use sana\image\Validator;
 use yii\base\Exception;
 
@@ -27,7 +27,7 @@ class LoaderTest extends TestCase
             ->setMethods(['validateUrl','validatePath','validateMime'])
             ->getMock();
 
-        $this->loader = new Loader($this->validatorMock);
+        $this->loader = new LoaderBase($this->validatorMock);
     }
 
     /**
