@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist sana/yii2-image-by-url
+composer require --prefer-dist sana/yii2-image-by-url "*"
 ```
 
 or add
 
 ```
-"sana/yii2-image-by-url": "1.0"
+"sana/yii2-image-by-url": "*"
 ```
 
 to the require section of your `composer.json` file.
